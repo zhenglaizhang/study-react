@@ -1,95 +1,68 @@
-# Modern Javascript (ES2015+)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- arrow functions
-- destructuring
-- rest/spread operators
-- classes
+## Available Scripts
 
-## Why React
+In the project directory, you can run:
 
-- A JavaScript library for building user interfaces
-- Not framework, small, not a completed solution
-- Declarative for dynamic data
-- model UI and state
-- https://jscomplete.com/learn/why-react
+### `npm start`
 
-## Hello
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- https://jscomplete.com/playground
-- Chrome React Developer Tools extension
-- https://reactjs.org/docs/introducing-jsx.html
-- https://facebook.github.io/jsx/
-- https://babeljs.io/rep
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-```
-function Hello() {
-	// return <div>Hello React!</div>;
-  return React.createElement("div", null, "Hello React!")
-}
+### `npm test`
 
-ReactDOM.render(
-  <Hello />, //  React.createElement(Hello, null),
-  document.getElementById('mountNode'),
-);
-```
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### useState
+### `npm run build`
 
-```
-function Button() {
-  const [counter, setCounter] = useState(1);
-	return <button onClick={ () => setCounter(counter+1) }>{counter}</button>;
-}
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-ReactDOM.render(
-  <Button />, 
-  document.getElementById('mountNode'),
-);
-```
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-### Parent -> Children data flow
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```jsx
-function Button(props) {
-  return (
-    <button onClick={ props.handleClick }>
-      +1
-    </button>
-  )
-}
+### `npm run eject`
 
-function Display(props) {
-  return <div>{props.couter}</div>;
-}
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-function App() {
-  const [counter, setCounter] = useState(1);
-  const handleClick = () => setCounter(counter+1);
-  return <React.Fragment>
-    <Button handleClick={handleClick}/>
-    <Display couter={counter} />
-    </React.Fragment>; 
-}
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('mountNode'),
-);
-```
-### Smart diffing algorithm
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- regenerate dom node if necessary only
-- rethink how to update UI interface - let react figure out what should be updated in an efficient way
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Learn More
 
-### Modern Javascript
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- https://github.com/tc39
-- https://jscomplete.com/learn
-  - https://jscomplete.com/learn/complete-intro-modern-javascript/1mjs5-destructuring
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Resources
+### Code Splitting
 
-- https://reactjs.org/
-- https://react-bootstrap.github.io/components/spinners/
-- https://jscomplete.com/learn/react-beyond-basics/react-cfp
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
