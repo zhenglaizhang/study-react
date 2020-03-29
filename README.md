@@ -47,6 +47,47 @@ ReactDOM.render(
 );
 ```
 
+### Parent -> Children data flow
+
+```jsx
+function Button(props) {
+  return (
+    <button onClick={ props.handleClick }>
+      +1
+    </button>
+  )
+}
+
+function Display(props) {
+  return <div>{props.couter}</div>;
+}
+
+function App() {
+  const [counter, setCounter] = useState(1);
+  const handleClick = () => setCounter(counter+1);
+  return <React.Fragment>
+    <Button handleClick={handleClick}/>
+    <Display couter={counter} />
+    </React.Fragment>; 
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('mountNode'),
+);
+```
+### Smart diffing algorithm
+
+- regenerate dom node if necessary only
+- rethink how to update UI interface - let react figure out what should be updated in an efficient way
+
+
+### Modern Javascript
+
+- https://github.com/tc39
+- https://jscomplete.com/learn
+  - https://jscomplete.com/learn/complete-intro-modern-javascript/1mjs5-destructuring
+
 ## Resources
 
 - https://reactjs.org/
